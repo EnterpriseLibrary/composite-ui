@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <ApplicationIcon />
+    <Win32Resource />
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Microsoft.Practices.CompositeUI</AssemblyName>
+    <RootNamespace>Microsoft.Practices.CompositeUI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.0.0-preview5.19224.8" />
+    <ProjectReference Include="..\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Source\Solution Items\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
+    <Compile Exclude="..\..\Source\CompositeUI\Properties\AssemblyInfo.cs" Include="..\..\Source\CompositeUI\**\*.cs" />
+    <EmbeddedResource Include="..\..\Source\CompositeUI\Properties\Resources.resx" />
+    <EmbeddedResource Include="..\..\Source\CompositeUI\SmartParts\SmartPartInfo.bmp"/>
+    <EmbeddedResource Include="..\..\Source\CompositeUI\SolutionProfile.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="..\..\Source\CompositeUI\SmartParts\SmartPartInfo.bmp">
+      <Link>SmartParts\SmartPartInfo.bmp</Link>
+      <DependentUpon>SmartPartInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Update="..\..\Source\CompositeUI\SmartParts\SmartPartInfo.Designer.cs">
+      <DependentUpon>SmartPartInfo.cs</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="..\..\Source\CompositeUI\SmartParts\SmartPartInfoProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="..\..\Source\CompositeUI\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Update="..\..\Source\CompositeUI\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>..\..\Source\CompositeUI\Properties\Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

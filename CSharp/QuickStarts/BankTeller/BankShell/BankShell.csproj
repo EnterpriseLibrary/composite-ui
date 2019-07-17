@@ -9,9 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BankShell</RootNamespace>
     <AssemblyName>BankShell</AssemblyName>
-    <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>C:\Dev\Microsoft Composite UI App Block\CSharp\Backup\QuickStarts\BankTeller\BankShell\</UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>Current</OldToolsVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>

@@ -1,0 +1,106 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>BankTellerModule</AssemblyName>
+    <RootNamespace>BankTellerModule</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.Core\CompositeUI.Core.csproj" />
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.WinForms.Core\CompositeUI.WinForms.Core.csproj" />
+    <ProjectReference Include="..\..\Source.Core\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+    <ProjectReference Include="..\BankTellerCommon.Core\BankTellerCommon.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\customerqueueview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\customerqueueview.designer.cs">
+      <DependentUpon>CustomerQueueView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\SideBarView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\SideBarView.Designer.cs">
+      <DependentUpon>SideBarView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\UserInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\BankTeller\userinfoview.designer.cs">
+      <DependentUpon>UserInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customeraccountsview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customeraccountsview.designer.cs">
+      <DependentUpon>CustomerAccountsView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customercommentsview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customercommentsview.designer.cs">
+      <DependentUpon>CustomerCommentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customerdetailview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customerdetailview.designer.cs">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customerheaderview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customerheaderview.designer.cs">
+      <DependentUpon>CustomerHeaderView.cs</DependentUpon>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customersummaryview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="WorkItems\Customer\customersummaryview.designer.cs">
+      <DependentUpon>CustomerSummaryView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\BankTeller\CustomerQueueView.resx">
+      <DependentUpon>CustomerQueueView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\BankTeller\SideBarView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SideBarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\BankTeller\UserInfoView.resx">
+      <DependentUpon>UserInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\Customer\CustomerAccountsView.resx">
+      <DependentUpon>CustomerAccountsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\Customer\CustomerCommentsView.resx">
+      <DependentUpon>CustomerCommentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\Customer\CustomerDetailView.resx">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\Customer\CustomerHeaderView.resx">
+      <DependentUpon>CustomerHeaderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WorkItems\Customer\CustomerSummaryView.resx">
+      <DependentUpon>CustomerSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

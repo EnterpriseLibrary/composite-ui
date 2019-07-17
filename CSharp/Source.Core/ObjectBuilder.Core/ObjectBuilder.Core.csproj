@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>Microsoft.Practices.ObjectBuilder</AssemblyName>
+    <RootNamespace>Microsoft.Practices.ObjectBuilder</RootNamespace>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Include="..\..\Source\Solution Items\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
+    <Compile Exclude="..\..\Source\ObjectBuilder\Properties\AssemblyInfo.cs" Include="..\..\Source\ObjectBuilder\**\*.cs" />
+    <EmbeddedResource Include="..\..\Source\ObjectBuilder\Properties\Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="..\..\Source\ObjectBuilder\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Update="..\..\Source\ObjectBuilder\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>..\..\Source\ObjectBuilder\Properties\Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

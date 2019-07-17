@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Microsoft.Practices.CompositeUI.WinForms</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Microsoft.Practices.CompositeUI.WinForms</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CompositeUI.Core\CompositeUI.Core.csproj" />
+    <ProjectReference Include="..\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Source\Solution Items\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
+    <Compile Exclude="..\..\Source\CompositeUI.WinForms\Properties\AssemblyInfo.cs" Include="..\..\Source\CompositeUI.WinForms\**\*.cs" />
+    
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\SmartPartPlaceholder.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>SmartPartPlaceholder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\DeckWorkspace.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>DeckWorkspace.cs</DependentUpon>
+      <Link>Workspaces\DeckWorkspace.bmp</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\TabSmartPartInfo.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>TabSmartPartInfo.cs</DependentUpon>
+      <Link>Workspaces\TabSmartPartInfo.bmp</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\TabWorkspace.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>TabWorkspace.cs</DependentUpon>
+      <Link>Workspaces\TabWorkspace.bmp</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\WindowSmartPartInfo.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>WindowSmartPartInfo.cs</DependentUpon>
+      <Link>Workspaces\WindowSmartPartInfo.bmp</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\ZoneSmartPartInfo.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>ZoneSmartPartInfo.cs</DependentUpon>
+      <Link>Workspaces\ZoneSmartPartInfo.bmp</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Workspaces\ZoneWorkspace.bmp">
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+      <DependentUpon>ZoneWorkspace.cs</DependentUpon>
+      <Link>Workspaces\ZoneWorkspace.bmp</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Update="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VisualizerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Update="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.Designer.cs">
+      <DependentUpon>VisualizerForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="..\..\Source\CompositeUI.WinForms\Workspaces\DeckWorkspace.Designer.cs">
+      <DependentUpon>DeckWorkspace.cs</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="..\..\Source\CompositeUI.WinForms\Workspaces\ZoneWorkspace.Designer.cs">
+      <DependentUpon>ZoneWorkspace.cs</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+
+</Project>

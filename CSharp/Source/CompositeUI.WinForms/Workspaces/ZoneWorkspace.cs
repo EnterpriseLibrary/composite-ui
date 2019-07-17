@@ -65,9 +65,9 @@ namespace Microsoft.Practices.CompositeUI.WinForms
 		/// Dictionary of zones that have been given names. 
 		/// </summary>
 		[Browsable(false)]
-		public ReadOnlyDictionary<string, Control> Zones
+		public Utility.ReadOnlyDictionary<string, Control> Zones
 		{
-			get { return new ReadOnlyDictionary<string, Control>(zonesByName); }
+			get { return new Utility.ReadOnlyDictionary<string, Control>(zonesByName); }
 		}
 
 		#region Private Methods

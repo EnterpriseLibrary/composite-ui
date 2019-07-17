@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>BankShell</AssemblyName>
+    <RootNamespace>BankShell</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ProfileCatalog.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ProfileCatalog.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.Core\CompositeUI.Core.csproj">
+      <Private></Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.WinForms.Core\CompositeUI.WinForms.Core.csproj" />
+    <ProjectReference Include="..\..\Source.Core\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+    <ProjectReference Include="..\BankTellerCommon.Core\BankTellerCommon.Core.csproj" />
+    <ProjectReference Include="..\BankTellerModule.Core\BankTellerModule.Core.csproj" />
+    <ProjectReference Include="..\CustomerMapExtensionModule.Core\CustomerMapExtensionModule.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BankShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BankShellForm.Designer.cs">
+      <DependentUpon>BankShellForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="BankShellForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankShellForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

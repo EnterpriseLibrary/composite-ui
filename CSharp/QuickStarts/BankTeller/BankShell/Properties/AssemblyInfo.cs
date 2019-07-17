@@ -31,5 +31,5 @@ using System.Security.Permissions;
 
 [assembly: ComVisible(false)]
 
-[assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.MemberAccess)]
+//[assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.MemberAccess)]
 

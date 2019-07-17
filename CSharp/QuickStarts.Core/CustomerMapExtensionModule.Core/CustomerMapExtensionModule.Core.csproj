@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>CustomerMapExtensionModule</AssemblyName>
+    <RootNamespace>CustomerMapExtensionModule</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.Core\CompositeUI.Core.csproj" />
+    <ProjectReference Include="..\..\Source.Core\CompositeUI.WinForms.Core\CompositeUI.WinForms.Core.csproj" />
+    <ProjectReference Include="..\..\Source.Core\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+    <ProjectReference Include="..\BankTellerCommon.Core\BankTellerCommon.Core.csproj" />
+    <ProjectReference Include="..\BankTellerModule.Core\BankTellerModule.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CustomerMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CustomerMap.Designer.cs">
+      <DependentUpon>CustomerMap.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CustomerMap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomerMap.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
