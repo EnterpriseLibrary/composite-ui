@@ -451,36 +451,58 @@ namespace Microsoft.Practices.CompositeUI.Tests.Collections
 
 		[TestMethod]
 		public void RemovingServiceRemovesStrongReferenceToService_Generic()
-		{
-			TestableServiceCollection services = CreateServiceCollection();
-			WeakReference wr = new WeakReference(services.AddNew<object>());
+        {
+            WeakReference wr = RemovingServiceRemovesStrongReferenceToService_Generic_TestHelper();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			services.Remove<object>();
-			GC.Collect();
+            Assert.IsNull(wr.Target);
+        }
 
-			Assert.IsNull(wr.Target);
-		}
+        private WeakReference RemovingServiceRemovesStrongReferenceToService_Generic_TestHelper()
+        {
+            TestableServiceCollection services = CreateServiceCollection();
+            WeakReference wr = new WeakReference(services.AddNew<object>());
 
-		[TestMethod]
+            services.Remove<object>();
+            return wr;
+        }
+
+        [TestMethod]
 		public void RemovingMultipleRegisteredServiceOnlyRemovesStrongReferenceWhenLastInstanceIsGone_Generic()
-		{
-			TestableServiceCollection services = CreateServiceCollection();
-			MockDataObject mdo = new MockDataObject();
-			WeakReference wr = new WeakReference(mdo);
-			services.Add<IMockDataObject>(mdo);
-			services.Add<IMockDataObject2>(mdo);
-			mdo = null;
+        {
+            WeakReference wr;
+            RemovingMultipleRegisteredServiceOnlyRemovesStrongReferenceWhenLastInstanceIsGone_Generic_TestHelper(out wr);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			services.Remove<IMockDataObject>();
-			GC.Collect();
-			Assert.IsNotNull(wr.Target);
+            Assert.IsNull(wr.Target);
+        }
 
-			services.Remove<IMockDataObject2>();
-			GC.Collect();
-			Assert.IsNull(wr.Target);
-		}
+        private void RemovingMultipleRegisteredServiceOnlyRemovesStrongReferenceWhenLastInstanceIsGone_Generic_TestHelper(out WeakReference wr)
+        {
+            RemovingMultipleRegisteredServiceOnlyRemovesStrongReferenceWhenLastInstanceIsGone_Generic_TestHelper2(out TestableServiceCollection services, out wr);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-		[TestMethod]
+            Assert.IsNotNull(wr.Target);
+
+            services.Remove<IMockDataObject2>();
+        }
+
+        private void RemovingMultipleRegisteredServiceOnlyRemovesStrongReferenceWhenLastInstanceIsGone_Generic_TestHelper2(out TestableServiceCollection services, out WeakReference wr)
+        {
+            services = CreateServiceCollection();
+            MockDataObject mdo = new MockDataObject();
+            wr = new WeakReference(mdo);
+            services.Add<IMockDataObject>(mdo);
+            services.Add<IMockDataObject2>(mdo);
+            mdo = null;
+
+            services.Remove<IMockDataObject>();
+        }
+
+        [TestMethod]
 		public void RemovingServiceCausesItToBeTornDown_Generic()
 		{
 			TestableServiceCollection services = CreateServiceCollection();
@@ -520,21 +542,28 @@ namespace Microsoft.Practices.CompositeUI.Tests.Collections
 
 		[TestMethod]
 		public void RemovingServiceRemovesStrongReferenceToService()
-		{
-			TestableServiceCollection services = CreateServiceCollection();
-			WeakReference wr = new WeakReference(services.AddNew<object>());
+        {
+            WeakReference wr = RemovingServiceRemovesStrongReferenceToService_TestHelper();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			services.Remove(typeof(object));
-			GC.Collect();
+            Assert.IsNull(wr.Target);
+        }
 
-			Assert.IsNull(wr.Target);
-		}
+        private WeakReference RemovingServiceRemovesStrongReferenceToService_TestHelper()
+        {
+            TestableServiceCollection services = CreateServiceCollection();
+            WeakReference wr = new WeakReference(services.AddNew<object>());
 
-		#endregion
+            services.Remove(typeof(object));
+            return wr;
+        }
 
-		#region IEnumerable
+        #endregion
 
-		[TestMethod]
+        #region IEnumerable
+
+        [TestMethod]
 		public void CanEnumerateCollection()
 		{
 			TestableServiceCollection collection = CreateServiceCollection();

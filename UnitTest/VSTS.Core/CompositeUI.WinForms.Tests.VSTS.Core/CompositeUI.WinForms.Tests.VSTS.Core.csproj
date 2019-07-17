@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <IsPackable>false</IsPackable>
+    <AssemblyName>Microsoft.Practices.CompositeUI.WinForms.Tests.VSTS.Core</AssemblyName>
+    <RootNamespace>Microsoft.Practices.CompositeUI.WinForms.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source.Core\CompositeUI.Core\CompositeUI.Core.csproj" />
+    <ProjectReference Include="..\..\..\Source.Core\CompositeUI.WinForms.Core\CompositeUI.WinForms.Core.csproj" />
+    <ProjectReference Include="..\..\..\Source.Core\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Include="..\..\VSTS\CompositeUI.WinForms\**\*.cs" Exclude="..\..\VSTS\CompositeUI.WinForms\**\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\..\VSTS\CompositeUI.WinForms\**\*.resx" />
+    <EmbeddedResource Include="..\..\VSTS\CompositeUI.WinForms\test.ico" Link="test.ico" />
+    <None Include="..\..\VSTS\CompositeUI.WinForms\app.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="..\..\VSTS\CompositeUI.WinForms\DesignTime\Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="..\..\VSTS\CompositeUI.WinForms\DesignTime\DeckWorkspaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="..\..\VSTS\CompositeUI.WinForms\DesignTime\MySmartPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="..\..\VSTS\CompositeUI.WinForms\Workspaces\ZoneWorkspaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

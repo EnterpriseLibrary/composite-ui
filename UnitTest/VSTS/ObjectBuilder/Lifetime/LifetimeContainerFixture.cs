@@ -36,8 +36,9 @@ namespace Microsoft.Practices.ObjectBuilder.Tests
 			container.Add(mdo);
 			mdo = null;
 			GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			Assert.AreEqual(1, container.Count);
+            Assert.AreEqual(1, container.Count);
 			mdo = wref.Target as MockDisposableObject;
 			Assert.IsNotNull(mdo);
 			Assert.IsFalse(mdo.WasDisposed);

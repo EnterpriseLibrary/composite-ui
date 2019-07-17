@@ -144,14 +144,21 @@ namespace Microsoft.Practices.ObjectBuilder.Tests
 		[TestMethod]
 		[ExpectedException(typeof(KeyNotFoundException))]
 		public void RegistrationDoesNotPreventGarbageCollection()
-		{
-			WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
-			dict.Add("foo", new object());
-			GC.Collect();
-			object unused = dict["foo"];
-		}
+        {
+            WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
+            RegistrationDoesNotPreventGarbageCollection_TestHelper(dict);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-		[TestMethod]
+            object unused = dict["foo"];
+        }
+
+        private static void RegistrationDoesNotPreventGarbageCollection_TestHelper(WeakRefDictionary<object, object> dict)
+        {
+            dict.Add("foo", new object());
+        }
+
+        [TestMethod]
 		public void NullIsAValidValue()
 		{
 			WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
@@ -189,30 +196,41 @@ namespace Microsoft.Practices.ObjectBuilder.Tests
 
 		[TestMethod]
 		public void CountReturnsNumberOfKeysWithLiveValues()
-		{
-			object o = new object();
-			WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
+        {
+            WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
+            CountReturnsNumberOfKeysWithLiveValues_TestHelper(out object o, dict);
 
-			dict.Add("foo1", o);
-			dict.Add("foo2", o);
+            o = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			Assert.AreEqual(2, dict.Count);
+            Assert.AreEqual(0, dict.Count);
+        }
 
-			o = null;
-			GC.Collect();
+        private static void CountReturnsNumberOfKeysWithLiveValues_TestHelper(out object o, WeakRefDictionary<object, object> dict)
+        {
+            o = new object();
+            dict.Add("foo1", o);
+            dict.Add("foo2", o);
 
-			Assert.AreEqual(0, dict.Count);
-		}
+            Assert.AreEqual(2, dict.Count);
+        }
 
-		[TestMethod]
+        [TestMethod]
 		public void CanAddItemAfterPreviousItemIsCollected()
-		{
-			WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
-			dict.Add("foo", new object());
+        {
+            WeakRefDictionary<object, object> dict = new WeakRefDictionary<object, object>();
+            CanAddItemAfterPreviousItemIsCollected_TestHelper(dict);
 
-			GC.Collect();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			dict.Add("foo", new object());
-		}
-	}
+            dict.Add("foo", new object());
+        }
+
+        private static void CanAddItemAfterPreviousItemIsCollected_TestHelper(WeakRefDictionary<object, object> dict)
+        {
+            dict.Add("foo", new object());
+        }
+    }
 }

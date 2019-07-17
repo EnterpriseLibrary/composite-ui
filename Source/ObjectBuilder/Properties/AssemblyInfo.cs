@@ -30,6 +30,3 @@ using System.Security.Permissions;
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
 
-
-// Temporarily removed to address build errors
-//[assembly: SecurityPermission(SecurityAction.RequestMinimum, SerializationFormatter = true)]

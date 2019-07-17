@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <RootNamespace>Microsoft.Practices.ObjectBuilder.Tests</RootNamespace>
+
+    <AssemblyName>Microsoft.Practices.ObjectBuilder.Tests.VSTS.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source.Core\ObjectBuilder.Core\ObjectBuilder.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\VSTS\ObjectBuilder\**\*.cs" Exclude="..\..\**\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\..\VSTS\ObjectBuilder\**\*.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  
+</Project>

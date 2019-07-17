@@ -34,4 +34,3 @@ AssemblyConfiguration
 [assembly : AssemblyCulture("")]
 [assembly : CLSCompliant(true)]
 [assembly : ComVisible(false)]
-[assembly : ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.MemberAccess)]

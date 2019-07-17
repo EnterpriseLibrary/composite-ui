@@ -286,34 +286,40 @@ namespace Microsoft.Practices.CompositeUI.Tests.EventBroker
 
 		[TestMethod]
 		public void FinalizedSubscriberIsRemovedOnClean()
-		{
-			TestSubscriber subscriber = new TestSubscriber();
-			topic.AddSubscription(subscriber, "TestEventHandler", workItem, ThreadOption.Publisher);
-			Assert.AreEqual(1, topic.SubscriptionCount);
+        {
+            FinalizedSubscriberIsRemovedOnClean_TestHelper();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			subscriber = null;
-			GC.Collect();
-			GC.WaitForPendingFinalizers();
+            Assert.AreEqual(0, topic.SubscriptionCount);
+        }
 
-			Assert.AreEqual(0, topic.SubscriptionCount);
-		}
+        private void FinalizedSubscriberIsRemovedOnClean_TestHelper()
+        {
+            TestSubscriber subscriber = new TestSubscriber();
+            topic.AddSubscription(subscriber, "TestEventHandler", workItem, ThreadOption.Publisher);
+            Assert.AreEqual(1, topic.SubscriptionCount);
+        }
 
-
-		[TestMethod]
+        [TestMethod]
 		public void FinalizedPublisherIsRemovedOnClean()
-		{
-			TestPublisher publisher = new TestPublisher();
-			topic.AddPublication(publisher, "TestEvent", workItem, PublicationScope.WorkItem);
-			Assert.AreEqual(1, topic.PublicationCount);
+        {
+            FinalizedPublisherIsRemovedOnClean_TestHelper();
 
-			publisher = null;
-			GC.Collect();
-			GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			Assert.AreEqual(0, topic.PublicationCount);
-		}
+            Assert.AreEqual(0, topic.PublicationCount);
+        }
 
-		[TestMethod]
+        private void FinalizedPublisherIsRemovedOnClean_TestHelper()
+        {
+            TestPublisher publisher = new TestPublisher();
+            topic.AddPublication(publisher, "TestEvent", workItem, PublicationScope.WorkItem);
+            Assert.AreEqual(1, topic.PublicationCount);
+        }
+
+        [TestMethod]
 		public void EventTopicExposesPublicationCount()
 		{
 			Assert.AreEqual(0, topic.PublicationCount);

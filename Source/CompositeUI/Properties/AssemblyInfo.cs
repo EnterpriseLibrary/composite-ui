@@ -19,12 +19,3 @@ using System.Security.Permissions;
 [assembly : AssemblyTitle("Microsoft.Practices.CompositeUI")]
 [assembly : AssemblyDescription("Microsoft Composite UI Application Block")]
 
-
-// Temporarily removed to address build errors
-//[assembly :
-//	DataProtectionPermission(SecurityAction.RequestMinimum,
-//		Flags = DataProtectionPermissionFlags.ProtectData | DataProtectionPermissionFlags.UnprotectData)]
-//[assembly : FileIOPermission(SecurityAction.RequestMinimum, Unrestricted = true)]
-//[assembly : ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.MemberAccess)]
-//[assembly : SecurityPermission(SecurityAction.RequestMinimum, Flags = SecurityPermissionFlag.ControlPrincipal)]
-//[assembly : WebPermission(SecurityAction.RequestMinimum, Unrestricted = true)]

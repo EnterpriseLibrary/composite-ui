@@ -129,7 +129,7 @@ namespace Microsoft.Practices.CompositeUI.Tests.ConfigurationModel
 				try
 				{
 					originalPrincipal = Thread.CurrentPrincipal;
-					if (Thread.CurrentPrincipal.Identity.IsAuthenticated)
+					if (Thread.CurrentPrincipal == null || Thread.CurrentPrincipal.Identity.IsAuthenticated)
 					{
 						Thread.CurrentPrincipal = new GenericPrincipal(WindowsIdentity.GetCurrent(), null);
 					}

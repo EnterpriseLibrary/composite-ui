@@ -21,6 +21,7 @@ using TestCleanup = NUnit.Framework.TearDownAttribute;
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Microsoft.Practices.ObjectBuilder.Tests
 {
@@ -248,16 +249,23 @@ namespace Microsoft.Practices.ObjectBuilder.Tests
 
 		[TestMethod]
 		public void RegistrationDoesNotPreventGarbageCollection()
-		{
-			IReadWriteLocator locator = new Locator();
+        {
+            IReadWriteLocator locator = new Locator();
 
-			locator.Add("foo", new object());
-			GC.Collect();
+            RegistrationDoesNotPreventGarbageCollection_TestHelper(locator);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			Assert.IsNull(locator.Get("foo"));
-		}
+            Assert.IsNull(locator.Get("foo"));
+        }
 
-		[TestMethod]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static void RegistrationDoesNotPreventGarbageCollection_TestHelper(IReadWriteLocator locator)
+        {
+            locator.Add("foo", new object());
+        }
+
+        [TestMethod]
 		public void CanFindOutIfContainsAKey()
 		{
 			object o = new object();
@@ -288,22 +296,26 @@ namespace Microsoft.Practices.ObjectBuilder.Tests
 
 		[TestMethod]
 		public void CountReturnsNumberOfKeysWithLiveValues()
-		{
-			object o = new object();
-			IReadWriteLocator locator = new Locator();
+        {
+            IReadWriteLocator locator = new Locator();
+            CountReturnsNumberOfKeysWithLiveValues_TestHelper(locator);
 
-			locator.Add("foo1", o);
-			locator.Add("foo2", o);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-			Assert.AreEqual(2, locator.Count);
+            Assert.AreEqual(0, locator.Count);
+        }
 
-			o = null;
-			GC.Collect();
+        private static void CountReturnsNumberOfKeysWithLiveValues_TestHelper(IReadWriteLocator locator)
+        {
+            object o = new object();
+            locator.Add("foo1", o);
+            locator.Add("foo2", o);
 
-			Assert.AreEqual(0, locator.Count);
-		}
+            Assert.AreEqual(2, locator.Count);
+        }
 
-		[TestMethod]
+        [TestMethod]
 		public void GetCanAskParentLocatorForAnObject()
 		{
 			object o = new object();

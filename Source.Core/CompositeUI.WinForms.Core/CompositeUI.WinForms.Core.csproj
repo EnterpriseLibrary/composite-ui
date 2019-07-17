@@ -54,6 +54,8 @@
       <DependentUpon>ZoneWorkspace.cs</DependentUpon>
       <Link>Workspaces\ZoneWorkspace.bmp</Link>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.resx"/>
+    <EmbeddedResource Include="..\..\Source\CompositeUI.WinForms\Properties\Resources.resx"/>
   </ItemGroup>
   
   <ItemGroup>
@@ -62,6 +64,7 @@
     </Compile>
     <EmbeddedResource Update="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.resx">
       <SubType>Designer</SubType>
+      <Link>Visualizer\VisualizerForm.resx</Link>
       <DependentUpon>VisualizerForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Update="..\..\Source\CompositeUI.WinForms\Visualizer\VisualizerForm.Designer.cs">
@@ -79,4 +82,17 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <EmbeddedResource Update="..\..\Source\CompositeUI.WinForms\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Update="..\..\Source\CompositeUI.WinForms\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>..\..\Source\CompositeUI.WinForms\Properties\Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
