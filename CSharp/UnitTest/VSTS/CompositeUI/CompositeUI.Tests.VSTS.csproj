@@ -1,0 +1,155 @@
+﻿<Project DefaultTargets='Build' xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
+  <PropertyGroup>
+    <Configuration Condition=' &apos;$(Configuration)&apos; == &apos;&apos; '>Debug</Configuration>
+    <Platform Condition=' &apos;$(Platform)&apos; == &apos;&apos; '>AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{533BB382-F49F-4945-EA80-4B01D58C1AB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.CompositeUI.Tests</RootNamespace>
+    <AssemblyName>Microsoft.Practices.CompositeUI.Tests.VSTS</AssemblyName>
+  <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
+  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Debug|AnyCPU&apos; '>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Release|AnyCPU&apos; '>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+<Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+  <SpecificVersion>False</SpecificVersion>
+</Reference>
+    <Reference Include='System'/>
+    <Reference Include='System.configuration'/>
+    <Reference Include='System.Data'/>
+    <Reference Include='System.Design'/>
+    <Reference Include='System.Drawing'/>
+    <Reference Include='System.Security'/>
+    <Reference Include='System.Windows.Forms'/>
+    <Reference Include='System.Xml'/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include='BuilderStrategies\CommandStrategyFixture.cs'/>
+    <Compile Include='Collections\UIExtensionSiteCollectionFixture.cs'/>
+    <Compile Include='Collections\UIExtensionSiteFixture.cs'/>
+    <Compile Include='Commands\CommandAdapterFixture.cs'/>
+    <Compile Include='EventBroker\WorkItemEventTopicCollectionFixture.cs'/>
+    <Compile Include='SmartParts\SmartPartInfoProviderFixture.cs'/>
+    <Compile Include='SmartParts\WorkspaceComposerFixture.cs'/>
+    <Compile Include='SmartParts\WorkspaceFixture.cs'/>
+    <Compile Include='StateElementFixture.cs'/>
+    <Compile Include='TestResourceFile.cs'/>
+    <Compile Include='Utility\DataEventArgsFixture.cs'/>
+    <Compile Include='Utility\GuardFixture.cs'/>
+    <Compile Include='Utility\ListDictionaryFixture.cs'/>
+    <Compile Include='Utility\ReaderLockFixture.cs'/>
+    <Compile Include='Utility\WriterLockFixture.cs'/>
+    <Compile Include='Visualizer\CabVisualizerFixture.cs'/>
+    <Compile Include='Collections\ManagedObjectCollectionFixture.cs'/>
+    <Compile Include='Collections\ServiceCollectionFixture.cs'/>
+    <Compile Include='Commands\AdapterMapFixture.cs'/>
+    <Compile Include='Commands\CommandHandlerAttributeFixture.cs'/>
+    <Compile Include='Commands\EventCommandAdapterFixture.cs'/>
+    <Compile Include='Commands\EventTopicCommandFixture.cs'/>
+    <Compile Include='ComponentDependencyAttributeFixture.cs'/>
+    <Compile Include='ConfigurationModel\ModuleInfoFixture.cs'/>
+    <Compile Include='ConfigurationModel\ServiceCollectionFixture.cs'/>
+    <Compile Include='ConfigurationModel\SolutionProfileReaderFixture.cs'/>
+    <Compile Include='ControllerFixture.cs'/>
+    <Compile Include='Commands\CommandFixture.cs'/>
+    <Compile Include='ConfigurationModel\TestSection.cs'/>
+    <Compile Include='BuilderStrategies\EventBrokerStrategyFixture.cs'/>
+    <Compile Include='EventBroker\EventTopicFixture.cs'/>
+    <Compile Include='EventBroker\EventTopicScopingFixture.cs'/>
+    <Compile Include='EventBroker\EventTopicSubscriptionModesFixture.cs'/>
+    <Compile Include='EventBroker\RunInBackgroundWorkerFixture.cs'/>
+    <Compile Include='Instrumentation\TraceSourceAttributeFixture.cs'/>
+    <Compile Include='Instrumentation\TraceSourceCatalogServiceFixture.cs'/>
+    <Compile Include='LifecycleWorkItemFixture.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ReflectionModule1.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ReflectionModule2.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ReflectionModule3.cs'/>
+    <Compile Include='Mocks\MockBuilderContext.cs'/>
+    <Compile Include='Services\FileCatalogModuleEnumeratorFixture.cs'/>
+    <Compile Include='Services\ReflectionModuleEnumeratorFixture.cs'/>
+    <Compile Include='Services\WorkItemTypeCatalogServiceFixture.cs'/>
+    <Compile Include='Services\WorkItemExtensionServiceFixture.cs'/>
+    <Compile Include='DictionaryEventArgsFixture.cs'/>
+    <Compile Include='EventBroker\EventBrokerAttributesTestFixture.cs'/>
+    <Compile Include='EventBroker\EventInspectorTestFixture.cs'>
+    </Compile>
+    <Compile Include='Mocks\GlobalEventHandler.cs'>
+    </Compile>
+    <Compile Include='Mocks\LocalEventPublisher.cs'>
+    </Compile>
+    <Compile Include='Mocks\GlobalEventPublisher.cs'>
+    </Compile>
+    <EmbeddedResource Include='Mocks\Src\ModuleExposingServices.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleExposingSameServices.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleReferencedAssembly.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleReferencingAssembly.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleThrowingException.cs'/>
+    <Compile Include='Mocks\MockListener.cs'/>
+    <Compile Include='Mocks\MockNarrator.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleExposingOnlyServices.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleExposingDuplicatedServices.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleDependency2.cs'/>
+    <EmbeddedResource Include='Mocks\Src\ModuleDependency1.cs'/>
+    <Compile Include='ModuleAttributeTestFixture.cs'/>
+    <Compile Include='ModuleDependencyAttributeTestFixture.cs'/>
+    <Compile Include='ModuleDependencySolverTestFixture.cs'/>
+    <Compile Include='SampleConfigurationProvider.cs'/>
+    <Compile Include='Properties\AssemblyInfo.cs'/>
+    <Compile Include='Services\IsolatedStorageStatePersistenceServiceFixture.cs'/>
+    <Compile Include='Services\StreamStatePersistenceServiceTestFixture.cs'/>
+    <Compile Include='Services\DataProtectionCryptographyServiceFixture.cs'/>
+    <Compile Include='Services\FileStatePersistenceServiceTestFixture.cs'/>
+    <Compile Include='Services\ModuleLoaderServiceFixture.cs'/>
+    <Compile Include='Services\ServiceAttributeTestFixture.cs'/>
+    <Compile Include='SmartParts\SmartPartInfoFixture.cs'/>
+    <Compile Include='SimpleWorkItemActivationServiceFixture.cs'/>
+    <Compile Include='SmartParts\WorkspaceCancelEventArgsFixture.cs'/>
+    <Compile Include='StateAttributeFixture.cs'/>
+    <Compile Include='StateFixture.cs'/>
+    <Compile Include='TestableRootWorkItem.cs'/>
+    <Compile Include='UIElements\UIElementAdapterFactoryCatalogFixture.cs'/>
+    <Compile Include='UIElements\UIElementAdapterFixture.cs'/>
+    <Compile Include='WorkItemExtensionFixture.cs'/>
+    <Compile Include='WorkItemFixture.cs'>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include='..\..\..\Src\CS\CompositeUI\CompositeUI.csproj'>
+      <Project>{C478E40B-A05E-4C69-9AB3-7A3BB374243F}</Project>
+      <Name>CompositeUI</Name>
+    </ProjectReference>
+    <ProjectReference Include='..\..\..\Src\CS\ObjectBuilder\ObjectBuilder.csproj'>
+      <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
+      <Name>ObjectBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include='Services\FileCatalogReaderServiceFixture.xml'/>
+    <EmbeddedResource Include='Services\FileCatalogReaderServiceFixtureModuleWithoutUpdateLocation.xml'/>
+    <EmbeddedResource Include='Services\FileCatalogReaderServiceFixtureWithRoles.xml'/>
+    <EmbeddedResource Include='Services\FileCatalogWithoutModules.xml'/>
+  </ItemGroup>
+  <Import Project='$(MSBuildBinPath)\Microsoft.CSHARP.Targets'/>
+  <PropertyGroup>
+    <PostBuildEvent>if exist "$(ProjectDir)\app.config" copy "$(ProjectDir)\app.config" "$(TargetPath).config"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

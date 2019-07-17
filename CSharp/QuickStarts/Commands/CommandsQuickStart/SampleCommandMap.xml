@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommandMap xmlns="http://schemas.microsoft.com/pag/cab-command-map">
+	<Mapping Site="File"  Label="Show Customer" CommandName="ShowCustomer" />
+	<Mapping Site="File" Label="Disable Show Customer" CommandName="DisableShowCustomer" />
+	<Mapping Site="File" Label="Enable Show Customer" CommandName="EnableShowCustomer" />
+	<Mapping Site="File" Label="Hide Show Customer" CommandName="HideShowCustomer" />
+</CommandMap>

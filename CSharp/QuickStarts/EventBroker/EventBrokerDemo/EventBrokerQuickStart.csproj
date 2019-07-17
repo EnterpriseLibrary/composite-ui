@@ -1,0 +1,103 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D74D48F9-85C5-452F-A1C1-7FCE9F9F8B1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EventBrokerQuickStart</RootNamespace>
+    <AssemblyName>EventBrokerQuickStart</AssemblyName>
+    <StartupObject>EventBrokerDemo.BrokerApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\EventBrokerDemo\bin\Debug\EventBrokerModule\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\EventBrokerDemo\bin\Release\EventBrokerModule\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerListController.cs" />
+    <Compile Include="CustomerListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerListView.Designer.cs">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaunchPadController.cs" />
+    <Compile Include="LaunchPadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaunchPadForm.Designer.cs">
+      <DependentUpon>LaunchPadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrokerApplication.cs" />
+    <Compile Include="ProgressView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressView.Designer.cs">
+      <DependentUpon>ProgressView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraceTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TraceTextBox.Designer.cs">
+      <DependentUpon>TraceTextBox.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Src\CS\CompositeUI.WinForms\CompositeUI.WinForms.csproj">
+      <Project>{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}</Project>
+      <Name>CompositeUI.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\CS\CompositeUI\CompositeUI.csproj">
+      <Project>{C478E40B-A05E-4C69-9AB3-7A3BB374243F}</Project>
+      <Name>CompositeUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\CS\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
+      <Name>ObjectBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomerListView.resx">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaunchPadForm.resx">
+      <DependentUpon>LaunchPadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressView.resx">
+      <DependentUpon>ProgressView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraceTextBox.resx">
+      <DependentUpon>TraceTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

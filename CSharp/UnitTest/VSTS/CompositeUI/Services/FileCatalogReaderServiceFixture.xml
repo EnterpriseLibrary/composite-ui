@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SolutionProfile xmlns="http://schemas.microsoft.com/pag/cab-profile">
+	<Modules>
+		<ModuleInfo AssemblyFile="MyAssembly.dll" UpdateLocation="blah.ashx" />
+	</Modules>
+</SolutionProfile>

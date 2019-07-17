@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SolutionProfile xmlns="http://schemas.microsoft.com/pag/cab-profile">
+	<Modules>
+		<ModuleInfo AssemblyFile="MyAssembly1.dll" UpdateLocation="blah.ashx"/>
+		<ModuleInfo AssemblyFile="MyAssembly2.dll" UpdateLocation="blah.ashx">
+			<Roles>
+				<Role Allow="Users"/>
+			</Roles>
+		</ModuleInfo>
+		<ModuleInfo AssemblyFile="MyAssembly3.dll" UpdateLocation="blah.ashx">
+			<Roles>
+				<Role Allow="NonExistentRole"/>
+			</Roles>
+		</ModuleInfo>
+		<ModuleInfo AssemblyFile="MyAssembly4.dll" UpdateLocation="blah.ashx">
+			<Roles>
+				<Role Allow="NonExistentRole"/>
+				<Role Allow="Users"/>
+			</Roles>
+		</ModuleInfo>
+	</Modules>
+</SolutionProfile>

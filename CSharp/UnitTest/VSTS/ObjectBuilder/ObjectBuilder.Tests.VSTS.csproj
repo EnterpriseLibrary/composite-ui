@@ -1,0 +1,87 @@
+﻿<Project DefaultTargets='Build' xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
+  <PropertyGroup>
+    <Configuration Condition=' &apos;$(Configuration)&apos; == &apos;&apos; '>Debug</Configuration>
+    <Platform Condition=' &apos;$(Platform)&apos; == &apos;&apos; '>AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C5262F7-FE62-415F-BC8D-3C49CC071403}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.ObjectBuilder.Tests</RootNamespace>
+    <AssemblyName>Microsoft.Practices.ObjectBuilder.Tests.VSTS</AssemblyName>
+  <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
+  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Debug|AnyCPU&apos; '>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Release|AnyCPU&apos; '>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+<Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+  <SpecificVersion>False</SpecificVersion>
+</Reference>
+    <Reference Include='System'/>
+    <Reference Include='System.XML'/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include='BuilderBaseFixture.cs'/>
+    <Compile Include='BuilderCodeTests.cs'/>
+    <Compile Include='BuilderConfigTests.cs'/>
+    <Compile Include='BuilderContextFixture.cs'/>
+    <Compile Include='BuilderFixture.cs'/>
+    <Compile Include='Configuration\ObjectBuilderXmlConfig.cs'>
+      <DependentUpon>ObjectBuilderXmlConfig.xsd</DependentUpon>
+    </Compile>
+    <Compile Include='Configuration\ObjectBuilderXmlConfig.Generated.cs'/>
+    <Compile Include='Lifetime\LifetimeContainerFixture.cs'/>
+    <Compile Include='Location\LocatorFixture.cs'/>
+    <Compile Include='Location\ReadOnlyLocatorFixture.cs'/>
+    <Compile Include='MockBuilderContext.cs'/>
+    <Compile Include='Properties\AssemblyInfo.cs'/>
+    <Compile Include='Strategies\BuilderAware\BuilderAwareStrategyFixture.cs'/>
+    <Compile Include='Strategies\Creation\ConstructorPolicyFixture.cs'/>
+    <Compile Include='Strategies\Creation\ConstructorReflectionStrategyFixture.cs'/>
+    <Compile Include='Strategies\Creation\CreationStrategyFixture.cs'/>
+    <Compile Include='Strategies\Creation\DefaultCreationPolicyFixture.cs'/>
+    <Compile Include='Strategies\Method\MethodExecutionStrategyFixture.cs'/>
+    <Compile Include='Strategies\Method\MethodReflectionStrategyFixture.cs'/>
+    <Compile Include='Strategies\Parameters\CloneableParameterFixture.cs'/>
+    <Compile Include='Strategies\Parameters\CreationParameterFixture.cs'/>
+    <Compile Include='Strategies\Parameters\LookupParameterFixture.cs'/>
+    <Compile Include='Strategies\Parameters\ValueParameterFixture.cs'/>
+    <Compile Include='Strategies\Property\PropertyReflectionStrategyFixture.cs'/>
+    <Compile Include='Strategies\Property\PropertySetterStrategyFixture.cs'/>
+    <Compile Include='Strategies\Singleton\SingletonStrategyFixture.cs'/>
+    <Compile Include='Strategies\TypeMapping\simpletypemappingpolicyfixture.cs'/>
+    <Compile Include='Strategies\TypeMapping\TypeMappingStrategyFixture.cs'/>
+    <Compile Include='Utility\DependencyResolverFixture.cs'/>
+    <Compile Include='Utility\PolicyListFixture.cs'/>
+    <Compile Include='Utility\WeakRefDictionaryFixture.cs'/>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include='Configuration\ObjectBuilderXmlConfig.xsd'>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include='Configuration\ObjectBuilderXmlConfig.xsx'>
+      <DependentUpon>ObjectBuilderXmlConfig.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include='..\..\..\Src\CS\ObjectBuilder\ObjectBuilder.csproj'>
+      <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
+      <Name>ObjectBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project='$(MSBuildBinPath)\Microsoft.CSHARP.Targets'/>
+</Project>

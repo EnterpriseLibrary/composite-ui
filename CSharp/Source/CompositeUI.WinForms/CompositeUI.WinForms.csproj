@@ -1,0 +1,160 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.CompositeUI.WinForms</RootNamespace>
+    <AssemblyName>Microsoft.Practices.CompositeUI.WinForms</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Microsoft.Practices.CompositeUI.WinForms.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Microsoft.Practices.CompositeUI.WinForms.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Activation\ControlActivationService.cs" />
+    <Compile Include="Activation\ControlActivationStrategy.cs" />
+    <Compile Include="Activation\IControlActivationService.cs" />
+    <Compile Include="ApplicationContextApplication.cs" />
+    <Compile Include="UIElements\ToolStripItemCollectionUIAdapter.cs" />
+    <Compile Include="UIElements\ToolStripItemOwnerCollectionUIAdapter.cs" />
+    <Compile Include="UIElements\ToolStripUIAdapterFactory.cs" />
+    <Compile Include="Visualizer\WinFormsVisualizer.cs" />
+    <Compile Include="ControlCommandAdapter.cs" />
+    <Compile Include="BuilderStrategies\ControlSmartPartStrategy.cs" />
+    <Compile Include="Visualizer\VisualizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualizer\VisualizerForm.Designer.cs">
+      <DependentUpon>VisualizerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsFormsApplication.cs" />
+    <Compile Include="BuilderStrategies\WinFormServiceStrategy.cs" />
+    <Compile Include="Workspaces\DeckWorkspace.Designer.cs">
+      <DependentUpon>DeckWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workspaces\TabSmartPartInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItemCommandAdapter.cs" />
+    <Compile Include="FormShellApplication.cs" />
+    <Compile Include="Workspaces\DeckWorkspace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workspaces\MdiWorkspace.cs">
+    </Compile>
+    <Compile Include="Workspaces\TabWorkspace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workspaces\WindowWorkspace.cs" />
+    <Compile Include="Workspaces\WorkspaceUtilities.cs" />
+    <Compile Include="Workspaces\ZoneWorkspace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workspaces\ZoneSmartPartInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workspaces\WindowSmartPartInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SmartPartPlaceholder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workspaces\ZoneWorkspace.Designer.cs">
+      <DependentUpon>ZoneWorkspace.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompositeUI\CompositeUI.csproj">
+      <Project>{C478E40B-A05E-4C69-9AB3-7A3BB374243F}</Project>
+      <Name>CompositeUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
+      <Name>ObjectBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SmartPartPlaceholder.bmp">
+      <DependentUpon>SmartPartPlaceholder.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workspaces\ZoneSmartPartInfo.bmp">
+      <DependentUpon>ZoneSmartPartInfo.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Visualizer\VisualizerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VisualizerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspaces\WindowSmartPartInfo.bmp">
+      <DependentUpon>WindowSmartPartInfo.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspaces\DeckWorkspace.bmp">
+      <DependentUpon>DeckWorkspace.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspaces\TabWorkspace.bmp">
+      <DependentUpon>TabWorkspace.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspaces\ZoneWorkspace.bmp">
+      <DependentUpon>ZoneWorkspace.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspaces\TabSmartPartInfo.bmp">
+      <DependentUpon>TabSmartPartInfo.cs</DependentUpon>
+      <CustomToolNamespace>Microsoft.Practices.CompositeUI.WinForms</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

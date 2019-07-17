@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ObjectBuilderXmlConfig" 
+                  targetNamespace="pag-object-builder"
+                  elementFormDefault="qualified"
+                  xmlns="pag-object-builder"
+                  xmlns:mstns="pag-object-builder"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="ObjectBuilderXmlConfig">
+		<xs:sequence>
+			<xs:element name="strategies" type="Strategies" minOccurs="0" maxOccurs="1" />
+			<xs:element name="build-rules" type="BuildRules" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BuildRules">
+		<xs:sequence>
+			<xs:element name="build-rule" type="BuildRule" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Strategies">
+		<xs:sequence>
+			<xs:element name="strategy" type="Strategy" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="include-default" type="xs:boolean" use="optional" default="true" />
+	</xs:complexType>
+
+	<xs:complexType name="Strategy">
+		<xs:attribute name="type" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="BuildRule">
+		<xs:sequence>
+			<xs:element name="constructor-params"  type="ConstructorParams" minOccurs="0" maxOccurs="1" />
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="mapped-type" type="MappedType" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="mode" type="Mode" use="required" />
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="MappedType">
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="Property">
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="value-param" type="ValueParam"/>
+			<xs:element name="ref-param" type="RefParam"/>
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="ConstructorParams">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="value-param" type="ValueParam"/>
+				<xs:element name="ref-param" type="RefParam"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RefParam">
+		<xs:attribute name="type" use="required" type="xs:string" />
+		<xs:attribute name="name" use="optional" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="ValueParam">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" use="required" type="xs:string" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="Mode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Singleton" />
+			<xs:enumeration value="Instance" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="object-builder-config" type="ObjectBuilderXmlConfig" />
+
+</xs:schema>

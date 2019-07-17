@@ -1,0 +1,132 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AE49F19-392B-4C50-A13C-F49B2579849D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Practices.ObjectBuilder</RootNamespace>
+    <AssemblyName>Microsoft.Practices.ObjectBuilder</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Microsoft.Practices.ObjectBuilder.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Release\Microsoft.Practices.ObjectBuilder.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuilderStrategy.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="BuilderStrategyChain.cs" />
+    <Compile Include="IBuilder.cs" />
+    <Compile Include="IBuilderStrategy.cs" />
+    <Compile Include="IBuilderStrategyChain.cs" />
+    <Compile Include="IBuilderContext.cs" />
+    <Compile Include="Lifetime\ILifetimeContainer.cs" />
+    <Compile Include="Lifetime\LifetimeContainer.cs" />
+    <Compile Include="Location\ReadableLocator.cs" />
+    <Compile Include="Location\ReadWriteLocator.cs" />
+    <Compile Include="Location\IReadableLocator.cs" />
+    <Compile Include="Location\IReadWriteLocator.cs" />
+    <Compile Include="Location\Locator.cs" />
+    <Compile Include="Location\ReadOnlyLocator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\Creation\CreationStrategy.cs" />
+    <Compile Include="Strategies\Creation\ConstructorPolicy.cs" />
+    <Compile Include="Strategies\Creation\ICreationPolicy.cs" />
+    <Compile Include="Strategies\Parameters\KnownTypeParameter.cs" />
+    <Compile Include="Strategies\Parameters\CloneParameter.cs" />
+    <Compile Include="Strategies\Parameters\CreationParameter.cs" />
+    <Compile Include="Strategies\Parameters\IParameter.cs" />
+    <Compile Include="Strategies\Parameters\LookupParameter.cs" />
+    <Compile Include="Strategies\Parameters\ValueParameter.cs" />
+    <Compile Include="Strategies\Property\PropertySetterStrategy.cs" />
+    <Compile Include="Strategies\Singleton\SingletonStrategy.cs" />
+    <Compile Include="Strategies\TypeMapping\ITypeMappingPolicy.cs" />
+    <Compile Include="Strategies\TypeMapping\TypeMappingPolicy.cs" />
+    <Compile Include="Strategies\TypeMapping\TypeMappingStrategy.cs" />
+    <Compile Include="Utility\DependencyResolutionLocatorKey.cs" />
+    <Compile Include="Utility\WeakRefDictionary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuilderBase.cs" />
+    <Compile Include="BuilderPolicyKey.cs" />
+    <Compile Include="BuilderContext.cs" />
+    <Compile Include="BuilderStage.cs" />
+    <Compile Include="Exceptions\DependencyMissingException.cs" />
+    <Compile Include="Strategies\Trace\BuilderTraceSourcePolicy.cs" />
+    <Compile Include="Strategies\Trace\IBuilderTracePolicy.cs" />
+    <Compile Include="Utility\Guard.cs" />
+    <Compile Include="IBuilderConfigurator.cs" />
+    <Compile Include="IBuilderPolicy.cs" />
+    <Compile Include="Exceptions\IncompatibleTypesException.cs" />
+    <Compile Include="Exceptions\InvalidAttributeException.cs" />
+    <Compile Include="Lifetime\LifetimeEventArgs.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strategies\ReflectionMemberInfo.cs" />
+    <Compile Include="SearchMode.cs" />
+    <Compile Include="Strategies\Attributes\InjectionConstructorAttribute.cs" />
+    <Compile Include="Strategies\Attributes\DependencyAttribute.cs" />
+    <Compile Include="Strategies\Attributes\InjectionMethodAttribute.cs" />
+    <Compile Include="Strategies\Attributes\ParameterAttribute.cs" />
+    <Compile Include="Strategies\BuilderAware\BuilderAwareStrategy.cs" />
+    <Compile Include="Strategies\BuilderAware\IBuilderAware.cs" />
+    <Compile Include="Strategies\Creation\ConstructorReflectionStrategy.cs" />
+    <Compile Include="Strategies\Creation\DefaultCreationPolicy.cs" />
+    <Compile Include="Strategies\IReflectionMemberInfo.cs" />
+    <Compile Include="Strategies\Method\IMethodCallInfo.cs" />
+    <Compile Include="Strategies\Property\IPropertySetterInfo.cs" />
+    <Compile Include="Strategies\Property\PropertySetterInfo.cs" />
+    <Compile Include="Strategies\ReflectionStrategy.cs" />
+    <Compile Include="Strategies\Method\IMethodPolicy.cs" />
+    <Compile Include="Strategies\Method\MethodCallInfo.cs" />
+    <Compile Include="Strategies\Method\MethodReflectionStrategy.cs" />
+    <Compile Include="Strategies\Method\MethodPolicy.cs" />
+    <Compile Include="Strategies\Method\MethodExecutionStrategy.cs" />
+    <Compile Include="Strategies\Attributes\CreateNewAttribute.cs" />
+    <Compile Include="Strategies\Parameters\DependencyParameter.cs" />
+    <Compile Include="Strategies\Property\IPropertySetterPolicy.cs" />
+    <Compile Include="Strategies\Property\PropertyReflectionStrategy.cs" />
+    <Compile Include="Strategies\Property\PropertySetterPolicy.cs" />
+    <Compile Include="Strategies\Singleton\ISingletonPolicy.cs" />
+    <Compile Include="Strategies\Singleton\SingletonPolicy.cs" />
+    <Compile Include="Utility\DependencyResolver.cs" />
+    <Compile Include="Utility\NotPresentBehavior.cs" />
+    <Compile Include="Utility\PolicyList.cs" />
+    <Compile Include="Utility\StrategyList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

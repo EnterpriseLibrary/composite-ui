@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CommandMap" targetNamespace="http://schemas.microsoft.com/pag/cab-command-map" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/pag/cab-command-map" xmlns:mstns="http://schemas.microsoft.com/pag/cab-command-map" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="CommandMap">
+		<xs:sequence>
+			<xs:element name="Mapping" type="Mapping" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Mapping">
+		<xs:attribute name="Site" type="xs:string" />
+		<xs:attribute name="CommandName" type="xs:string" />
+		<xs:attribute name="Label" type="xs:string" />
+	</xs:complexType>
+	<xs:element name="CommandMap" type="CommandMap" />
+</xs:schema>

@@ -1,0 +1,157 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45AAAC79-E7DF-492C-A5DE-9C2BC6016FCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartPartQuickStart</RootNamespace>
+    <AssemblyName>SmartPartQuickStart</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer.cs" />
+    <Compile Include="ViewCustomerWorkItem\CustomerCommentsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerCommentsView.Designer.cs">
+      <DependentUpon>CustomerCommentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\CustomersController.cs" />
+    <Compile Include="ViewCustomerWorkItem\CustomerController.cs" />
+    <Compile Include="ViewCustomerWorkItem\CustomerDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerDetailView.Designer.cs">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\CustomerListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\CustomerListView.Designer.cs">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\CustomerMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\CustomerMain.Designer.cs">
+      <DependentUpon>CustomerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerSummaryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerSummaryView.Designer.cs">
+      <DependentUpon>CustomerSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerTabView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\CustomerTabView.Designer.cs">
+      <DependentUpon>CustomerTabView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseCustomersWorkItem\BrowseCustomersWorkItem.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartPartApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ViewCustomerWorkItem\CustomerCommentsView.resx">
+      <DependentUpon>CustomerCommentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomerWorkItem\CustomerDetailView.resx">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseCustomersWorkItem\CustomerListView.resx">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseCustomersWorkItem\CustomerMain.resx">
+      <DependentUpon>CustomerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomerWorkItem\CustomerSummaryView.resx">
+      <DependentUpon>CustomerSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomerWorkItem\CustomerTabView.resx">
+      <DependentUpon>CustomerTabView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitledSmartPart.resx">
+      <DependentUpon>TitledSmartPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TitledSmartPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TitledSmartPart.Designer.cs">
+      <DependentUpon>TitledSmartPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomerWorkItem\ViewCustomerWorkItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Src\CS\CompositeUI.WinForms\CompositeUI.WinForms.csproj">
+      <Project>{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}</Project>
+      <Name>CompositeUI.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\CS\CompositeUI\CompositeUI.csproj">
+      <Project>{C478E40B-A05E-4C69-9AB3-7A3BB374243F}</Project>
+      <Name>CompositeUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\CS\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
+      <Name>ObjectBuilder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAB", "CAB", "{765BE9D3-182D-478F-8EC0-8F52B25A19F2}"
+EndProject
+Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ModuleLoaderQuickStart", "QuickStarts\ModuleLoader\ModuleLoaderQuickStart\ModuleLoaderQuickStart.csproj", "{D53533C1-4270-44A6-862E-18623445CA0B}"
+EndProject
+Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ObjectBuilder", "Source\ObjectBuilder\ObjectBuilder.csproj", "{2AE49F19-392B-4C50-A13C-F49B2579849D}"
+EndProject
+Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI", "Source\CompositeUI\CompositeUI.csproj", "{C478E40B-A05E-4C69-9AB3-7A3BB374243F}"
+EndProject
+Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI.WinForms", "Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj", "{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}"
+EndProject
+Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "GPSModule", "QuickStarts\ModuleLoader\GPSModule\GPSModule.csproj", "{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D53533C1-4270-44A6-862E-18623445CA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53533C1-4270-44A6-862E-18623445CA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53533C1-4270-44A6-862E-18623445CA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53533C1-4270-44A6-862E-18623445CA0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE49F19-392B-4C50-A13C-F49B2579849D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE49F19-392B-4C50-A13C-F49B2579849D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE49F19-392B-4C50-A13C-F49B2579849D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE49F19-392B-4C50-A13C-F49B2579849D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C478E40B-A05E-4C69-9AB3-7A3BB374243F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C478E40B-A05E-4C69-9AB3-7A3BB374243F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C478E40B-A05E-4C69-9AB3-7A3BB374243F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C478E40B-A05E-4C69-9AB3-7A3BB374243F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AE49F19-392B-4C50-A13C-F49B2579849D} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
+		{C478E40B-A05E-4C69-9AB3-7A3BB374243F} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
+		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
+	EndGlobalSection
+EndGlobal
