@@ -1,17 +1,19 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAB", "CAB", "{765BE9D3-182D-478F-8EC0-8F52B25A19F2}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ModuleLoaderQuickStart", "QuickStarts\ModuleLoader\ModuleLoaderQuickStart\ModuleLoaderQuickStart.csproj", "{D53533C1-4270-44A6-862E-18623445CA0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleLoaderQuickStart", "QuickStarts\ModuleLoader\ModuleLoaderQuickStart\ModuleLoaderQuickStart.csproj", "{D53533C1-4270-44A6-862E-18623445CA0B}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ObjectBuilder", "Source\ObjectBuilder\ObjectBuilder.csproj", "{2AE49F19-392B-4C50-A13C-F49B2579849D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectBuilder", "Source\ObjectBuilder\ObjectBuilder.csproj", "{2AE49F19-392B-4C50-A13C-F49B2579849D}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI", "Source\CompositeUI\CompositeUI.csproj", "{C478E40B-A05E-4C69-9AB3-7A3BB374243F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeUI", "Source\CompositeUI\CompositeUI.csproj", "{C478E40B-A05E-4C69-9AB3-7A3BB374243F}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI.WinForms", "Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj", "{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeUI.WinForms", "Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj", "{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "GPSModule", "QuickStarts\ModuleLoader\GPSModule\GPSModule.csproj", "{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSModule", "QuickStarts\ModuleLoader\GPSModule\GPSModule.csproj", "{C0C593F3-A235-4B68-B4A7-6BC724A2F8E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,5 +49,8 @@ Global
 		{2AE49F19-392B-4C50-A13C-F49B2579849D} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
 		{C478E40B-A05E-4C69-9AB3-7A3BB374243F} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
 		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0} = {765BE9D3-182D-478F-8EC0-8F52B25A19F2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CFE7830-5809-4920-9209-45C646E35CBE}
 	EndGlobalSection
 EndGlobal

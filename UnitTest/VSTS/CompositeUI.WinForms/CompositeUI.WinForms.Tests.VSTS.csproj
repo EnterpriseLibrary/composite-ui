@@ -1,7 +1,7 @@
-﻿<Project DefaultTargets='Build' xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
   <PropertyGroup>
-    <Configuration Condition=' &apos;$(Configuration)&apos; == &apos;&apos; '>Debug</Configuration>
-    <Platform Condition=' &apos;$(Platform)&apos; == &apos;&apos; '>AnyCPU</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{006913B7-12A3-4FF1-5295-32825D100C9C}</ProjectGuid>
@@ -9,8 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Practices.CompositeUI.WinForms.Tests</RootNamespace>
     <AssemblyName>Microsoft.Practices.CompositeUI.WinForms.Tests.VSTS</AssemblyName>
-  <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids></PropertyGroup>
-  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Debug|AnyCPU&apos; '>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -19,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=' &apos;$(Configuration)|$(Platform)&apos; == &apos;Release|AnyCPU&apos; '>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -28,117 +34,115 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-  <SpecificVersion>False</SpecificVersion>
-</Reference>
-    <Reference Include='System'/>
-    <Reference Include='System.configuration'/>
-    <Reference Include='System.Configuration.Install'/>
-    <Reference Include='System.Data'/>
-    <Reference Include='System.DirectoryServices'/>
-    <Reference Include='System.Drawing'/>
-    <Reference Include='System.Messaging'/>
-    <Reference Include='System.Transactions'/>
-    <Reference Include='System.Windows.Forms'/>
-    <Reference Include='System.Xml'/>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include='ControlActivationStrategyFixture.cs'/>
-    <Compile Include='ControlActivationServiceFixture.cs'/>
-    <Compile Include='DesignTime\Component1.cs'>
+    <Compile Include="ControlActivationStrategyFixture.cs" />
+    <Compile Include="ControlActivationServiceFixture.cs" />
+    <Compile Include="DesignTime\Component1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include='DesignTime\Component1.Designer.cs'>
+    <Compile Include="DesignTime\Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
-    <Compile Include='DesignTime\CustomWorkItem.cs'>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include='DesignTime\DeckWorkspaceForm.cs'>
+    <Compile Include="DesignTime\CustomWorkItem.cs" />
+    <Compile Include="DesignTime\DeckWorkspaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include='DesignTime\DeckWorkspaceForm.Designer.cs'>
+    <Compile Include="DesignTime\DeckWorkspaceForm.Designer.cs">
       <DependentUpon>DeckWorkspaceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include='DesignTime\DesignTimeFixture.cs'/>
-    <Compile Include='DesignTime\MySmartPart.cs'>
+    <Compile Include="DesignTime\DesignTimeFixture.cs" />
+    <Compile Include="DesignTime\MySmartPart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include='DesignTime\MySmartPart.Designer.cs'>
+    <Compile Include="DesignTime\MySmartPart.Designer.cs">
       <DependentUpon>MySmartPart.cs</DependentUpon>
     </Compile>
-    <Compile Include='FormShellApplicationFixture.cs'/>
-    <Compile Include='SmartPartPlaceholderFixture.cs'>
+    <Compile Include="FormShellApplicationFixture.cs" />
+    <Compile Include="SmartPartPlaceholderFixture.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include='Properties\AssemblyInfo.cs'/>
-    <Compile Include='ControlSmartPartStrategyFixture.cs'>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ControlSmartPartStrategyFixture.cs">
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include='..\..\..\Src\CS\CompositeUI.WinForms\CompositeUI.WinForms.csproj'>
+    <ProjectReference Include="..\..\..\Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj">
       <Project>{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}</Project>
       <Name>CompositeUI.WinForms</Name>
     </ProjectReference>
-    <ProjectReference Include='..\..\..\Src\CS\CompositeUI\CompositeUI.csproj'>
+    <ProjectReference Include="..\..\..\Source\CompositeUI\CompositeUI.csproj">
       <Project>{C478E40B-A05E-4C69-9AB3-7A3BB374243F}</Project>
       <Name>CompositeUI</Name>
     </ProjectReference>
-    <ProjectReference Include='..\..\..\Src\CS\ObjectBuilder\ObjectBuilder.csproj'>
+    <ProjectReference Include="..\..\..\Source\ObjectBuilder\ObjectBuilder.csproj">
       <Project>{2AE49F19-392B-4C50-A13C-F49B2579849D}</Project>
       <Name>ObjectBuilder</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include='DesignTime\Component1.resx'>
+    <EmbeddedResource Include="DesignTime\Component1.resx">
       <DependentUpon>Component1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include='DesignTime\CustomWorkItem.resx'>
+    <EmbeddedResource Include="DesignTime\CustomWorkItem.resx">
       <DependentUpon>CustomWorkItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include='DesignTime\DeckWorkspaceForm.resx'>
+    <EmbeddedResource Include="DesignTime\DeckWorkspaceForm.resx">
       <DependentUpon>DeckWorkspaceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include='DesignTime\MySmartPart.resx'>
+    <EmbeddedResource Include="DesignTime\MySmartPart.resx">
       <DependentUpon>MySmartPart.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include='app.config'>
+    <None Include="app.config">
     </None>
-    <Compile Include='ControlCommandAdapterFixture.cs'/>
-    <Compile Include='MockBuilderContext.cs'/>
-    <Compile Include='TestableRootWorkItem.cs'/>
-    <Compile Include='ToolStripItemCommandAdapterFixture.cs'>
+    <Compile Include="ControlCommandAdapterFixture.cs" />
+    <Compile Include="MockBuilderContext.cs" />
+    <Compile Include="TestableRootWorkItem.cs" />
+    <Compile Include="ToolStripItemCommandAdapterFixture.cs">
     </Compile>
-    <Compile Include='UIElements\ToolStripItemCollectionUIAdapterFixture.cs'/>
-    <Compile Include='UIElements\ToolStripItemOwnerCollectionUIAdapterFixture.cs'/>
-    <Compile Include='UIElements\ToolStripUIAdapterFactoryFixture.cs'/>
-    <Compile Include='Visualizer\WinFormsVisualizerFixture.cs'/>
-    <Compile Include='WindowsFormsApplicationFixture.cs'/>
-    <Compile Include='WinFormServiceStrategyFixture.cs'/>
-    <Compile Include='Workspaces\DeckWorkspaceFixture.cs'/>
-    <Compile Include='Workspaces\MdiWorkspaceFixture.cs'/>
-    <Compile Include='Workspaces\TabWorkspaceFixture.cs'/>
-    <Compile Include='Workspaces\WindowWorkspaceFixture.cs'>
+    <Compile Include="UIElements\ToolStripItemCollectionUIAdapterFixture.cs" />
+    <Compile Include="UIElements\ToolStripItemOwnerCollectionUIAdapterFixture.cs" />
+    <Compile Include="UIElements\ToolStripUIAdapterFactoryFixture.cs" />
+    <Compile Include="Visualizer\WinFormsVisualizerFixture.cs" />
+    <Compile Include="WindowsFormsApplicationFixture.cs" />
+    <Compile Include="WinFormServiceStrategyFixture.cs" />
+    <Compile Include="Workspaces\DeckWorkspaceFixture.cs" />
+    <Compile Include="Workspaces\MdiWorkspaceFixture.cs" />
+    <Compile Include="Workspaces\TabWorkspaceFixture.cs" />
+    <Compile Include="Workspaces\WindowWorkspaceFixture.cs">
     </Compile>
-    <Compile Include='Workspaces\ZoneWorkspaceFixture.cs'/>
-    <Compile Include='Workspaces\ZoneWorkspaceForm.cs'>
+    <Compile Include="Workspaces\ZoneWorkspaceFixture.cs" />
+    <Compile Include="Workspaces\ZoneWorkspaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include='Workspaces\ZoneWorkspaceForm.Designer.cs'>
+    <Compile Include="Workspaces\ZoneWorkspaceForm.Designer.cs">
       <DependentUpon>ZoneWorkspaceForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include='test.ico'/>
-    <EmbeddedResource Include='Workspaces\ZoneWorkspaceForm.resx'>
+    <EmbeddedResource Include="test.ico" />
+    <EmbeddedResource Include="Workspaces\ZoneWorkspaceForm.resx">
       <DependentUpon>ZoneWorkspaceForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project='$(MSBuildBinPath)\Microsoft.CSharp.targets'/>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if exist "$(ProjectDir)\app.config" copy "$(ProjectDir)\app.config" "$(TargetPath).config"</PostBuildEvent>
   </PropertyGroup>

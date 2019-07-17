@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAB", "CAB", "{E04D1F4E-6324-4E67-9BF8-07CD4A21406A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 1", "Step 1", "{2C2198F1-C3D3-4C5A-8D88-87F0F25C3ACC}"
@@ -11,25 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 3", "Step 3", "{D4AFC0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 4", "Step 4", "{371F288C-FA3A-4112-9DE0-480C1322CAB6}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ShellApplication", "QuickStarts\Walkthrough\Step1\ShellApplication\ShellApplication.csproj", "{27939947-5B62-4C4C-99FF-898BF0C71D07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellApplication", "QuickStarts\Walkthrough\Step1\ShellApplication\ShellApplication.csproj", "{27939947-5B62-4C4C-99FF-898BF0C71D07}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ObjectBuilder", "Source\ObjectBuilder\ObjectBuilder.csproj", "{2AE49F19-392B-4C50-A13C-F49B2579849D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectBuilder", "Source\ObjectBuilder\ObjectBuilder.csproj", "{2AE49F19-392B-4C50-A13C-F49B2579849D}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI", "Source\CompositeUI\CompositeUI.csproj", "{C478E40B-A05E-4C69-9AB3-7A3BB374243F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeUI", "Source\CompositeUI\CompositeUI.csproj", "{C478E40B-A05E-4C69-9AB3-7A3BB374243F}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "CompositeUI.WinForms", "Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj", "{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeUI.WinForms", "Source\CompositeUI.WinForms\CompositeUI.WinForms.csproj", "{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "MyModule", "QuickStarts\Walkthrough\Step2\MyModule\MyModule.csproj", "{97B7A004-2B34-462C-A055-4A02972A99A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModule", "QuickStarts\Walkthrough\Step2\MyModule\MyModule.csproj", "{97B7A004-2B34-462C-A055-4A02972A99A9}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ShellApplication", "QuickStarts\Walkthrough\Step2\ShellApplication\ShellApplication.csproj", "{637AD7F9-7056-41AC-93B2-0956EC1FD4D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellApplication", "QuickStarts\Walkthrough\Step2\ShellApplication\ShellApplication.csproj", "{637AD7F9-7056-41AC-93B2-0956EC1FD4D5}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ShellApplication", "QuickStarts\Walkthrough\Step3\ShellApplication\ShellApplication.csproj", "{AE9B0095-C0D9-4ACD-BF5D-D44CE5CE9B51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellApplication", "QuickStarts\Walkthrough\Step3\ShellApplication\ShellApplication.csproj", "{AE9B0095-C0D9-4ACD-BF5D-D44CE5CE9B51}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "MyModule", "QuickStarts\Walkthrough\Step3\MyModule\MyModule.csproj", "{231EE72D-663A-4AC0-BE56-3728D5FE3477}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModule", "QuickStarts\Walkthrough\Step3\MyModule\MyModule.csproj", "{231EE72D-663A-4AC0-BE56-3728D5FE3477}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "MyModule", "QuickStarts\Walkthrough\Step4\MyModule\MyModule.csproj", "{C496A04B-72AF-4343-9833-7A36010F562C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModule", "QuickStarts\Walkthrough\Step4\MyModule\MyModule.csproj", "{C496A04B-72AF-4343-9833-7A36010F562C}"
 EndProject
-Project("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC") = "ShellApplication", "QuickStarts\Walkthrough\Step4\ShellApplication\ShellApplication.csproj", "{21775AD9-4C98-483B-A716-F9D7EE65F874}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellApplication", "QuickStarts\Walkthrough\Step4\ShellApplication\ShellApplication.csproj", "{21775AD9-4C98-483B-A716-F9D7EE65F874}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,15 +84,18 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{27939947-5B62-4C4C-99FF-898BF0C71D07} = {2C2198F1-C3D3-4C5A-8D88-87F0F25C3ACC}
 		{2AE49F19-392B-4C50-A13C-F49B2579849D} = {E04D1F4E-6324-4E67-9BF8-07CD4A21406A}
 		{C478E40B-A05E-4C69-9AB3-7A3BB374243F} = {E04D1F4E-6324-4E67-9BF8-07CD4A21406A}
 		{073BCD60-F2FB-4DB9-92FB-403C8F9E8DD0} = {E04D1F4E-6324-4E67-9BF8-07CD4A21406A}
-		{27939947-5B62-4C4C-99FF-898BF0C71D07} = {2C2198F1-C3D3-4C5A-8D88-87F0F25C3ACC}
 		{97B7A004-2B34-462C-A055-4A02972A99A9} = {BF1408E7-A8C3-4BA5-8EA8-F22434E8F33A}
 		{637AD7F9-7056-41AC-93B2-0956EC1FD4D5} = {BF1408E7-A8C3-4BA5-8EA8-F22434E8F33A}
 		{AE9B0095-C0D9-4ACD-BF5D-D44CE5CE9B51} = {D4AFC0B3-98F2-4987-88EF-452D00350ABC}
 		{231EE72D-663A-4AC0-BE56-3728D5FE3477} = {D4AFC0B3-98F2-4987-88EF-452D00350ABC}
 		{C496A04B-72AF-4343-9833-7A36010F562C} = {371F288C-FA3A-4112-9DE0-480C1322CAB6}
 		{21775AD9-4C98-483B-A716-F9D7EE65F874} = {371F288C-FA3A-4112-9DE0-480C1322CAB6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40EE950C-AB56-40EC-93C2-2BCFA605FA79}
 	EndGlobalSection
 EndGlobal
