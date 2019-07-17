@@ -131,7 +131,7 @@ namespace BankShell
 			this.MainMenuStrip = this.mainMenuStrip;
 			this.Name = "BankShellForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Bank Shell";
+			this.Text = "Bank Shell (netfx4)";
 			this.mainMenuStrip.ResumeLayout(false);
 			this.mainMenuStrip.PerformLayout();
 			this.mainStatusStrip.ResumeLayout(false);
