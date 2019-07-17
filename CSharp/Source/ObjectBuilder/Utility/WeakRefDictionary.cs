@@ -163,8 +163,8 @@ namespace Microsoft.Practices.ObjectBuilder
 
 		private TObject DecodeNullObject<TObject>(object innerValue)
 		{
-			if (innerValue == typeof(NullObject))
-				return default(TObject);
+            if (innerValue != null && innerValue.GetType() == typeof(NullObject))
+                return default(TObject);
 			else
 				return (TObject)innerValue;
 		}

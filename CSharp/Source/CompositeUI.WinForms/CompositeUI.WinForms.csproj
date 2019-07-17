@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Practices.CompositeUI.WinForms</RootNamespace>
     <AssemblyName>Microsoft.Practices.CompositeUI.WinForms</AssemblyName>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Dev\Microsoft Composite UI App Block\CSharp\Backup\Source\CompositeUI.WinForms\</UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,39 +67,25 @@
     <Compile Include="Workspaces\DeckWorkspace.Designer.cs">
       <DependentUpon>DeckWorkspace.cs</DependentUpon>
     </Compile>
-    <Compile Include="Workspaces\TabSmartPartInfo.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Workspaces\TabSmartPartInfo.cs" />
     <Compile Include="ToolStripItemCommandAdapter.cs" />
     <Compile Include="FormShellApplication.cs" />
-    <Compile Include="Workspaces\DeckWorkspace.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Workspaces\DeckWorkspace.cs" />
     <Compile Include="Workspaces\MdiWorkspace.cs">
     </Compile>
-    <Compile Include="Workspaces\TabWorkspace.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Workspaces\TabWorkspace.cs" />
     <Compile Include="Workspaces\WindowWorkspace.cs" />
     <Compile Include="Workspaces\WorkspaceUtilities.cs" />
-    <Compile Include="Workspaces\ZoneWorkspace.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Workspaces\ZoneSmartPartInfo.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Workspaces\WindowSmartPartInfo.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Workspaces\ZoneWorkspace.cs" />
+    <Compile Include="Workspaces\ZoneSmartPartInfo.cs" />
+    <Compile Include="Workspaces\WindowSmartPartInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="SmartPartPlaceholder.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="SmartPartPlaceholder.cs" />
     <Compile Include="Workspaces\ZoneWorkspace.Designer.cs">
       <DependentUpon>ZoneWorkspace.cs</DependentUpon>
     </Compile>

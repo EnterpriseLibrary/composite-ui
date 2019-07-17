@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>8.0.50727</ProductVersion>
@@ -22,10 +22,9 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Dev\Microsoft Composite UI App Block\CSharp\Backup\Source\CompositeUI\</UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -228,9 +227,7 @@
     <Compile Include="Services\WindowsPrincipalAuthenticationService.cs" />
     <Compile Include="SimpleWorkItemActivationService.cs" />
     <Compile Include="SmartParts\SmartPartAttribute.cs" />
-    <Compile Include="SmartParts\SmartPartInfo.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="SmartParts\SmartPartInfo.cs" />
     <Compile Include="SmartParts\SmartPartPlaceHolderEventArgs.cs" />
     <Compile Include="SmartParts\WorkspaceCancelEventArgs.cs" />
     <Compile Include="SmartParts\WorkspaceEventArgs.cs" />
