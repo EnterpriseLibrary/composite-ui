@@ -21,8 +21,10 @@
   <ItemGroup>
     <Compile Include="..\..\Source\Solution Items\GlobalAssemblyInfo.cs" Link="GlobalAssemblyInfo.cs" />
     <Compile Exclude="..\..\Source\CompositeUI\Properties\AssemblyInfo.cs" Include="..\..\Source\CompositeUI\**\*.cs" />
+    <Compile Remove="..\..\Source\CompositeUI\StateElement.cs" />
+    <Compile Remove="..\..\Source\CompositeUI\*.NetFramework.cs" />
     <EmbeddedResource Include="..\..\Source\CompositeUI\Properties\Resources.resx" />
-    <EmbeddedResource Include="..\..\Source\CompositeUI\SmartParts\SmartPartInfo.bmp"/>
+    <EmbeddedResource Include="..\..\Source\CompositeUI\SmartParts\SmartPartInfo.bmp" />
     <EmbeddedResource Include="..\..\Source\CompositeUI\SolutionProfile.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>

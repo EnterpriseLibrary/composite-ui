@@ -23,10 +23,11 @@ namespace Microsoft.Practices.CompositeUI
 	/// <see cref="WorkItem"/> is saved and loaded.
 	/// </summary>
 	[Serializable]
-	public class State : StateElement, ISerializable
+	public partial class State : StateElement
 	{
 		private bool hasChanges;
 		private string id;
+        [NonSerialized]
 		private TraceSource traceSource = null;
 
 		/// <summary>
@@ -54,36 +55,10 @@ namespace Microsoft.Practices.CompositeUI
 			this.id = id;
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="State"/> class using the provided
-		/// serialization information.
-		/// </summary>
-		/// <param name="info">The <see cref="SerializationInfo"/> to populate with data.</param>
-		/// <param name="context">The destination (see <see cref="StreamingContext"/>) for this serialization. </param>
-		protected State(SerializationInfo info, StreamingContext context)
-			: base(info, context)
-		{
-			this.id = (string)info.GetValue("id", typeof(string));
-		}
-
-		/// <summary>
-		/// Populates a System.Runtime.Serialization.SerializationInfo with the data
-		/// needed to serialize the target object.
-		/// </summary>
-		/// <param name="info">The System.Runtime.Serialization.SerializationInfo to populate with data.</param>
-		/// <param name="context">The destination <see cref="StreamingContext"/>
-		/// for this serialization.</param>
-		[SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.SerializationFormatter)]
-		public override void GetObjectData(SerializationInfo info, StreamingContext context)
-		{
-			base.GetObjectData(info, context);
-			info.AddValue("id", this.id);
-		}
-
-		/// <summary>
-		/// Gets and sets the value of an element in the state.
-		/// </summary>
-		public new object this[string key]
+        /// <summary>
+        /// Gets and sets the value of an element in the state.
+        /// </summary>
+        public new object this[string key]
 		{
 			get { return base[key]; }
 			set { base[key] = value; }

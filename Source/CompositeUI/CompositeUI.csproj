@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="SmartParts\Workspace.cs" />
     <Compile Include="SmartParts\WorkspaceComposer.cs" />
+    <Compile Include="State.NetFramework.cs" />
     <Compile Include="Utility\DataEventArgs.cs" />
     <Compile Include="Utility\Guard.cs" />
     <Compile Include="Utility\ListDictionary.cs" />
